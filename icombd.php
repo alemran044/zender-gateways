@@ -1,12 +1,12 @@
 <?php
 /**
- * iCombd SMS Gateway
+ * ICOMBD SMS Gateway
  * @author Titan Systems
  */
 
 define("ICOMBD_GATEWAY", [
-	"username" => "my_uname", // Your twilio Account SID
-	"password" => "my_pass", // Your twilio authentication token
+	"username" => "my_username", // Your ICOMBD Account User Name
+	"password" => "my_password", // Your ICOMBD Account Password
 	"sender" => "My Zender" // Sender Name
 ]);
 
@@ -30,7 +30,7 @@ function gatewaySend($phone, $message, &$system)
         "http_errors" => false
 	]);
 
-	if($send->getStatusCode() == 200):
+	if($send->getStatusCode() == 201):
 		return true;
 	else:
 		return false;
